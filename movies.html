@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <title> Gráfico de Barras </title> 
+        <!-- Inclusões das bibliotecas JavaScript para o Highcharts
+ --> 
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script> 
+			$(function () {  
+				$('#container').highcharts({
+					chart: {type:'bar'}, 
+					title: {text: 'Arrecadação de Filmes'}, 
+					xAxis: {categories: ['Worldwide', 'Domestic', 'Foreign > Brazil', 'Foreign > Germany']}, 
+					yAxis: {title: {text: 'Itens consumidos'}}, 
+					series:
+					[
+						{name: 'Deadpool', data: [756971828, 358587687, 20602053, 24454521]},
+						{name: 'Pacific Rim', data: [411002906, 101802906, 6324601, 6402830]},
+						{name: 'Avengers', data: [1519557910, 623357910, 63904807, 30828359]},
+						{name: 'Little Miss Sunshine', data: [100523181, 59891098, 1533512, 3303727]},
+						{name: 'Star Wars VII: The Force Awakens', data: [2064053170, 935553170, 27982311, 109685739]}
+					] 
+				}); 
+			});
+		</script>  
+    </head> 
+    <body> 
+    	<div id="container" style="width:100%; height:400px;"></div>
+	</body> 
+</html>
