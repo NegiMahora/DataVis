@@ -13,7 +13,7 @@
 					chart: {type:'bar'}, 
 					title: {text: 'Arrecadação de Filmes'}, 
 					xAxis: {categories: ['Worldwide', 'Domestic', 'Foreign > Brazil', 'Foreign > Germany']}, 
-					yAxis: {title: {text: 'Itens consumidos'}}, 
+					yAxis: {title: {text: 'Valor Arrecadado'}}, 
 					series:
 					[
 						{name: 'Deadpool', data: [756971828, 358587687, 20602053, 24454521]},
@@ -22,11 +22,27 @@
 						{name: 'Little Miss Sunshine', data: [100523181, 59891098, 1533512, 3303727]},
 						{name: 'Star Wars VII: The Force Awakens', data: [2064053170, 935553170, 27982311, 109685739]}
 					] 
+				});
+				$('#container2').highcharts({
+					chart: {type:'lines'}, 
+					title: {text: 'Arrecadação de Filmes na Primeira Semana'}, 
+					xAxis: {categories: ['Sexta','Sábado','Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta']}, 
+					yAxis: {title: {text: 'Valor Arrecadado'}}, 
+					series:
+					[
+						{name: 'Deadpool', data: [47335600, 42508000, 42591000, 19759200, 11559600, 8617600, 8023800]},
+						{name: 'Pacific Rim', data: [14562934, 12733493, 9988898, 4057108, 4416340, 3409448, 3112071]},
+						{name: 'Avengers', data: [80813985, 69557990, 57066733, 18898999, 17677190, 13612910, 12391566]},
+						{name: 'Little Miss Sunshine', data: [103201, 142343, 125454, 58184, 60594, 62188, 58204]},
+						{name: 'Star Wars VII: The Force Awakens', data: [119119282, 68294204, 60553189, 40109742, 37361729, 38022183, 27395725]}
+					] 
 				}); 
 			});
-		</script>  
+		</script>
+
     </head> 
     <body> 
     	<div id="container" style="width:100%; height:400px;"></div>
+    	<div id="container2" style="width:100%; height:400px;"></div>
 	</body> 
 </html>
