@@ -13,7 +13,12 @@
 					chart: {type:'bar'}, 
 					title: {text: 'Média das notas dadas de acordo com o gênero'}, 
 					xAxis: {title: {text:'Nota média'}, categories: ['Western','Musical','Biography','Biopic','Documentary','Fantasy','Thriller','Animation','Romance','Drama','Adventure','Crime','Action','Comedy','Mystery','Horror','Sci-fi']}, 
-					yAxis: {title: {text: 'Gênero'}}, 
+					yAxis: {title: {text: 'Gênero'}},
+					tooltip: {
+    						formatter: function() {
+        						return 'A nota média da categoria ' + this.x + ' é ' + this.y;
+    						}
+					},
 					series:
 					[
 						{data: [85.00,82.67,74.83,73.00,72.20,72.00,65.71,65.65,65.45,64.36,62.72,61.19,58.86,56.09,55.00,48.38,43.00]}
