@@ -27,16 +27,25 @@
 				$('#container2').highcharts({
 					chart: {type:'line'}, 
 					title: {text: 'Arrecadação de Filmes na Primeira Semana'}, 
-					xAxis: {categories: ['Sexta','Sábado','Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta']}, 
+					xAxis: {categories: []}, 
 					yAxis: {title: {text: 'Valor Arrecadado'}}, 
-					series:
-					[
-						{name: 'Deadpool', data: [47335600, 42508000, 42591000, 19759200, 11559600, 8617600, 8023800]},
-						{name: 'Pacific Rim', data: [14562934, 12733493, 9988898, 4057108, 4416340, 3409448, 3112071]},
-						{name: 'Avengers', data: [80813985, 69557990, 57066733, 18898999, 17677190, 13612910, 12391566]},
-						{name: 'Little Miss Sunshine', data: [103201, 142343, 125454, 58184, 60594, 62188, 58204]},
-						{name: 'Star Wars VII: The Force Awakens', data: [119119282, 68294204, 60553189, 40109742, 37361729, 38022183, 27395725]}
-					] 
+					$.get('data.csv', function(data) {
+					    // Split the lines
+					    var lines = data.split('\n');
+					    // Iterate over the lines and add categories or series
+					    $.each(lines, function(lineNo, line) {
+					        var items = line.split(',');
+					        if(lineNo>0)
+					        {
+					            options.xAxis.categories.push(items[11]); //set first column from CSV as categorie
+					            options.series[0].data.push((items[6])); //set second column from CSV as point value
+					        }
+					
+					    });
+					
+					    // Create the chart
+					    var chart = new Highcharts.Chart(options);
+					});
 				}); 
 			});
 		</script>
