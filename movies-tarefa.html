@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <title> Gráfico de Barras </title> 
+        <!-- Inclusões das bibliotecas JavaScript para o Highcharts
+ --> 
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script> 
+			$(function () {  
+				$('#container').highcharts({
+					chart: {type:'bar'}, 
+					title: {text: 'Média das notas dadas de acordo com o gênero'}, 
+					xAxis: {title: {text:'Nota média'}}, 
+					yAxis: {title: {text: 'Gênero'}}, 
+					series:
+					[
+						{name: 'Western', data: [85.00]},
+						{name: 'Musical', data: [82.67]},
+						{name: 'Biography', data: [74.83]},
+						{name: 'Biopic', data: [73.00]},
+						{name: 'Documentary', data: [72.20]}
+						{name: 'Fantasy', data: [72.00]}
+						{name: 'Thriller', data: [65.71]}
+						{name: 'Animation', data: [65.65]}
+						{name: 'Romance', data: [65.45]}
+						{name: 'Drama', data: [64.36]}
+						{name: 'Adventure', data: [62.72]}
+						{name: 'Crime', data: [61.19]}
+						{name: 'Action', data: [58.86]}
+						{name: 'Comedy', data: [56.09]}
+						{name: 'Mystery', data: [55.00]}
+						{name: 'Horror', data: [48.38]}
+						{name: 'Sci-fi', data: [43.00]}
+					] 
+				});
+				$('#container2').highcharts({
+					chart: {type:'line'}, 
+					title: {text: 'Arrecadação de Filmes na Primeira Semana'}, 
+					xAxis: {categories: ['Sexta','Sábado','Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta']}, 
+					yAxis: {title: {text: 'Valor Arrecadado'}}, 
+					series:
+					[
+						{name: 'Deadpool', data: [47335600, 42508000, 42591000, 19759200, 11559600, 8617600, 8023800]},
+						{name: 'Pacific Rim', data: [14562934, 12733493, 9988898, 4057108, 4416340, 3409448, 3112071]},
+						{name: 'Avengers', data: [80813985, 69557990, 57066733, 18898999, 17677190, 13612910, 12391566]},
+						{name: 'Little Miss Sunshine', data: [103201, 142343, 125454, 58184, 60594, 62188, 58204]},
+						{name: 'Star Wars VII: The Force Awakens', data: [119119282, 68294204, 60553189, 40109742, 37361729, 38022183, 27395725]}
+					] 
+				}); 
+			});
+		</script>
+
+    </head> 
+    <body> 
+    	<div id="container" style="width:100%; height:400px;"></div>
+    	<div id="container2" style="width:100%; height:400px;"></div>
+	</body> 
+</html>
