@@ -26,26 +26,13 @@
 				});
 				$('#container2').highcharts({
 					chart: {type:'line'}, 
-					title: {text: 'Arrecadação de Filmes na Primeira Semana'}, 
-					xAxis: {categories: []}, 
-					yAxis: {title: {text: 'Valor Arrecadado'}}, 
-					$.get('data.csv', function(data) {
-					    // Split the lines
-					    var lines = data.split('\n');
-					    // Iterate over the lines and add categories or series
-					    $.each(lines, function(lineNo, line) {
-					        var items = line.split(',');
-					        if(lineNo>0)
-					        {
-					            options.xAxis.categories.push(items[11]); //set first column from CSV as categorie
-					            options.series[0].data.push(parseFloat(items[14])); //set second column from CSV as point value
-					        }
-					
-					    });
-					
-					    // Create the chart
-					    var chart = new Highcharts.Chart(options);
-					});
+					title: {text: 'Número de Filmes por Nota da Audiência'}, 
+					xAxis: {title: {text:'Nota da Audiência'}, categories: [20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95]}, 
+					yAxis: {title: {text: 'Número de Filmes'}},
+					series:
+					[
+						{data:[3,8,21,29,45,64,67,72,55,65,61,58,43,43,26,5]}
+					]
 				}); 
 			});
 		</script>
