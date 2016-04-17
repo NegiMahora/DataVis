@@ -31,7 +31,7 @@
 					yAxis: {title: {text: 'Número de Filmes'}},
 					tooltip: {
     						formatter: function() {
-        						return 'Existem <b>' + this.y + '</b> filmes com nota entre <b>' + (this.x - 2) + - + (this.x + 2) + '</b>';
+        						return 'Existem <b>' + this.y + '</b> filmes com nota entre <b>' + (this.category.name - 2) + - + (this.category.name + 2) + '</b>';
     						}
 					},
 					series:
