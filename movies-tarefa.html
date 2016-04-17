@@ -29,6 +29,11 @@
 					title: {text: 'Número de Filmes por Nota da Audiência'}, 
 					xAxis: {title: {text:'Nota da Audiência'}, categories: [20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95]}, 
 					yAxis: {title: {text: 'Número de Filmes'}},
+					tooltip: {
+    						formatter: function() {
+        						return 'Existem <b>' + this.y + '</b> filmes com nota entre <b>' + this.y-2 + - + this.y+2 + '</b>';
+    						}
+					},
 					series:
 					[
 						{data:[3,8,21,29,45,64,67,72,55,65,61,58,43,43,26,5]}
