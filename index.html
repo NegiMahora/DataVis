@@ -1,11 +1,232 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-<body>
-<h1>Index</h1>
-<p><a href="http://negimahora.github.io/DataVis/barras.html">Primeiro Exemplo - Lanchonete do Diniz</a></p>
-<p><a href="http://negimahora.github.io/DataVis/movies.html">Segundo Exemplo - Tabelas de Arrecadação de Filmes</a></p>
-<h1> Tarefas de Visualização</h1>
-<p><a href="http://negimahora.github.io/DataVis/movies-tarefa.html">Tarefa 2 de Visualização de Dados</a></p>
+    <head>
+        <title>Trabalho de Visualização - Dota 2</title>
+        <style>
+            @font-face {
+                font-family: 'Radiance';
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance.eot');
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance.eot?#iefix') format('embedded-opentype'),
+                url('http://cdn.dota2.com/apps/dota2/fonts/radiance.woff') format('woff'),
+                url('http://cdn.dota2.com/apps/dota2/fonts/radiance.ttf') format('truetype'),
+                url('http://cdn.dota2.com/apps/dota2/fonts/radiance.svg#ywftsvg') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
 
-</body>
+            @font-face {
+                font-family: 'Radiance-Bold';
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance-bold.eot');
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance-bold.eot?#iefix') format('embedded-opentype'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-bold.woff') format('woff'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-bold.ttf') format('truetype'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-bold.svg#ywftsvg') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Radiance-SemiBold';
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance-semibold.eot');
+                src: url('http://cdn.dota2.com/apps/dota2/fonts/radiance-semibold.eot?#iefix') format('embedded-opentype'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-semibold.woff') format('woff'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-semibold.ttf') format('truetype'),
+                 url('http://cdn.dota2.com/apps/dota2/fonts/radiance-semibold.svg#ywftsvg') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            p, h1, h2, h3, u1 {
+                margin: 0 0 0 0;
+            }
+            b{
+                font-family: 'Radiance-SemiBold';
+                font-weight: normal;
+                color: #AAAAAA;
+                text-shadow: 1px 1px 1px #000000;
+            }
+            .sectionContainer{
+                background-image: url( 'http://cdn.dota2.com/apps/dota2/images/687/featured.jpg' );
+                background-color: #151618;
+            }
+            .section {
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 80px;
+                padding-bottom: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1050px;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            .section #header {
+                font-family: 'Radiance';
+                text-transform: uppercase;
+                font-weight: normal;
+                font-size: 22px;
+                letter-spacing: 1px;
+                color: #ED3B1C;
+                text-shadow: 1px 1px 1px #000000;
+            }
+            .section #text {
+                font-family: 'Radiance';
+                font-size: 18px;
+                color: #808080;
+                line-height: 34px;
+                margin-left: 20px;
+                text-shadow: 1px 1px 1px #000000;
+            }
+            body {
+                background-color: #000000;
+            }
+            p {
+                text-indent: 30px;
+            }
+            a, a:visited, a:active {
+                text-decoration: none;
+                color: #CC867A;
+            }
+            .content {
+                font-family: 'Radiance';
+                background-color: #000000;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+                color: #999999;
+            }
+            h1 {
+                font-family:'Radiance';
+                background-color: black;
+                text-align: center;
+                font-size: 60px;
+                text-transform: uppercase;
+                color: #ED3B1C;
+                letter-spacing: 8px;
+                font-weight: normal;
+                margin-top: 54px;
+                margin-bottom: 45px;
+            }
+            
+            #footer {
+                font-family: 'Radiance';
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 80px;
+                padding-bottom: 40px;
+                width: 400px;
+                color: #ED3B1C;
+                letter-spacing:1px;
+                font-size: 18px;
+            }
+            #keyArt{
+                background-image: url( 'dota-2-official.jpg' );
+                background-color: #060E11;
+                height: 660px;
+                background-position: top center;
+                background-repeat: no-repeat;
+                width: 100%;
+                text-align: left;
+                display:block;
+            }
+            .detalhes {
+                display: block;
+                margin-top: 10px;
+                color: #CC867A;
+            }
+            .detalhes.esconderBotao
+            {
+                margin-top: -5px;
+                margin-bottom: 15px;
+            }
+            .detalhesExtendido {
+                position: relative;
+                display: none;
+                width: 950px;
+                background-color: #0E0E0E;
+                border: 1px solid black;
+                margin-top: 0px;
+                margin-left: -20px;
+                padding: 15px;
+                padding-left: 20px;
+                color: #707070;
+            }
+            .detalhesPopUp {
+                display: none;
+                position: absolute;
+                z-index: 100;
+                width: 910px;
+                background-color: #131313;
+                border: 1px solid black;
+                margin-top: 5px;
+                margin-left: -20px;
+                padding: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                color: #707070;
+            }
+            #hoverButton:hover + .detalhesPopUp {
+                display: block;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class='content'>
+            <div id="keyArt">
+            </div>
+            <h1>
+                Dota 2: Análise do Perfil dos Jogadores
+            </h1>
+            <div class="sectionContainer">
+                <div class='section'>
+                    <div id='header'>
+                        Lorem Ipsum
+                    </div>
+                    <div id='text'>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <a href="#" id="hoverButton"> [?] </a>
+                            <span class="detalhesPopUp">
+                                Testando popups.
+                            </span>
+                        </p>
+                        <p>
+                            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+                        </p>
+                        <p>
+                            Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.
+                        </p>
+                        <p>
+                            Proin nonummy, lacus eget pulvinar lacinia, pede felis dignissim leo, vitae tristique magna lacus sit amet eros. Nullam ornare. Praesent odio ligula, dapibus sed, tincidunt eget, dictum ac, nibh. Nam quis lacus. Nunc eleifend molestie velit. Morbi lobortis quam eu velit. Donec euismod vestibulum massa. Donec non lectus. Aliquam commodo lacus sit amet nulla. Cras dignissim elit et augue. Nullam non diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst. Aenean vestibulum. Sed lobortis elit quis lectus. Nunc sed lacus at augue bibendum dapibus.
+                        </p>
+
+                        <a href="#" class="detalhes" id="eToggle0" onclick="document.getElementById('extended0').style.display = 'block'; this.style.display = 'none';return false;" style="display: block;">
+                            + Exibir detalhes
+                        </a>
+                        <div class="detalhesExtendido" id="extended0" style="display: none;">
+                            <a href="#" id="eToggleHide0" class="detalhes esconderBotao" onclick="document.getElementById('extended0').style.display = 'none'; document.getElementById('eToggle0').style.display = 'block';return false;">
+                                - Ocultar detalhes
+                            </a>
+                            <p>Dois jogadores não podem votar no mesmo herói. O jogo exibirá heróis votados, mas não quem votou em quem. A quantidade de banimentos é igual à metade da quantidade de votos. Caso haja uma quantidade ímpar de votos, a quantidade de banimentos é arredondada aleatoriamente para cima ou para baixo.</p>
+                            <p>Os banimentos escolherão, no máximo, 3 heróis votados por uma mesma equipe, evitando possíveis desequilíbrios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='footer'>
+            Equipe:
+            <ul>
+                <li> Alexandre Sombra Lima </li>
+                <li> André de Oliveira Bastos </li>
+                <li> Eduardo Rodrigues Duarte Neto </li>
+            </ul>
+        </div>
+    </body>
 </html>
