@@ -4,13 +4,15 @@ $(function () {
                 chart: {type:'area',
                         style: {
                             fontFamily: "Radiance"
-                        }
+                        },
+                        backgroundColor: 'transparent'
                     }, 
-                title: {text: 'Número de jogadores por mês'}, 
+                title: {text: '<b>Número de jogadores por mês</b>',
+                    style:{color:'#808080'}}, 
                 xAxis: {type: 'datetime',
                     minRange: 47 * 30 * 24 * 3600000 
                 },
-                yAxis: {title: {text: 'Número médio de jogadores'}},
+                yAxis: {title: {text: '<b>Número médio de jogadores</b>'}},
                 tooltip: {
                         xDateFormat: '%d - %m - %Y',
                         formatter: function() {
@@ -22,6 +24,9 @@ $(function () {
                                 }
                                 return value;
                     }
+                },
+                credits: {
+                    enabled: false
                 },
                 legend: {
                     enabled: false
@@ -37,7 +42,7 @@ $(function () {
                             },
                             stops: [
                                 [0, '#ED3B1C'],
-                                [1, '#FFFFFF']
+                                [1, 'transparent']
                             ]
                         },
                         lineWidth: 1,
